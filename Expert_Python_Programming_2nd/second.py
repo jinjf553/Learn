@@ -66,5 +66,15 @@ def method3():
     print(b)
 
 
+def method4():
+    def fibonacci():
+        a, b = 0, 1
+        for i in range(10000):
+            yield b
+            a, b = b, a + b
+
+    pprint([len(str(i)) for i in list(fibonacci())])
+
+
 if __name__ == '__main__':
-    method3()
+    method4()
